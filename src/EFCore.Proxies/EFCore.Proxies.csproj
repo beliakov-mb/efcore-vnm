@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>Lazy loading proxies for Entity Framework Core.</Description>
@@ -39,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Castle.Core" Version="5.1.0" />
+    <PackageReference Include="Castle.Core" Version="5.1.1" />
   </ItemGroup>
 
   <ItemGroup>
