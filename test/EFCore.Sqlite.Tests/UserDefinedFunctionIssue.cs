@@ -12,21 +12,22 @@ public class UserDefinedFunctionIssue
         // var q = context.CustomerBalances
         //     .Where(c => c.Customer.Name == "123");
 
-        var q = context.CustomerBalances
-            .Where(
-                c =>
-                    MyDefinedFunctions.MyDefinedFunction(
-                        context.CustomerBalances
-                            .Count(x => x.CustomerId == 123)
-                    ).Any());
-
         // var q = context.CustomerBalances
         //     .Where(
         //         c =>
         //             MyDefinedFunctions.MyDefinedFunction(
         //                 context.CustomerBalances
-        //                     .Count(x => x.Customer.Name == "123")
-        //             ).Any());docker
+        //                     .Count(x => x.CustomerId == 123)
+        //             ).Any());
+
+        var q = context.CustomerBalances
+            .Where(
+                c =>
+                    MyDefinedFunctions.MyDefinedFunction(
+                        context.CustomerBalances
+                            .Count(x => x.Customer.Name == "123")
+                    ).Any());
+
 
         Console.WriteLine(q.ToQueryString());
     }

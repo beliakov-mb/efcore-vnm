@@ -226,6 +226,12 @@ public partial class NavigationExpandingExpressionVisitor : ExpressionVisitor
                 }
                 else
                 {
+                    if (entityType.Name == "Microsoft.EntityFrameworkCore.ValueAsQueryableIntResultDto")
+                    {
+                        var expresson = entityQueryRootExpression.VisitChildrenOpen(this);
+                        return CreateNavigationExpansionExpression(expresson, entityType);
+                    }
+
                     navigationExpansionExpression = CreateNavigationExpansionExpression(entityQueryRootExpression, entityType);
                 }
 

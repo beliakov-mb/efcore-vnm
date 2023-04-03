@@ -27,6 +27,7 @@ public class EntityQueryRootExpression : QueryRootExpression, IPrintableExpressi
         : base(asyncQueryProvider, entityType.ClrType)
     {
         EntityType = entityType;
+        Arguments = null!;
     }
 
     /// <summary>
@@ -37,7 +38,25 @@ public class EntityQueryRootExpression : QueryRootExpression, IPrintableExpressi
         : base(entityType.ClrType)
     {
         EntityType = entityType;
+        Arguments = null!;
     }
+
+    /// <summary>
+    /// wadas
+    /// </summary>
+    /// <param name="entityType">dasdas</param>
+    /// <param name="arguments">adsa</param>
+    public EntityQueryRootExpression(IEntityType entityType, IReadOnlyCollection<Expression> arguments)
+        : base(entityType.ClrType)
+    {
+        EntityType = entityType;
+        Arguments = arguments;
+    }
+
+    /// <summary>
+    /// asdsadsadoh
+    /// </summary>
+    public IReadOnlyCollection<Expression> Arguments { get; }
 
     /// <summary>
     ///     The entity type represented by this query root.
@@ -73,6 +92,14 @@ public class EntityQueryRootExpression : QueryRootExpression, IPrintableExpressi
     /// <inheritdoc />
     protected override Expression VisitChildren(ExpressionVisitor visitor)
         => this;
+
+    /// <summary>
+    /// wewqew
+    /// </summary>
+    /// <param name="visitor">wqewqe</param>
+    /// <returns>wqeqw</returns>
+    public Expression VisitChildrenOpen(ExpressionVisitor visitor)
+        => VisitChildren(visitor);
 
     /// <summary>
     ///     Creates a printable string representation of the given expression using <see cref="ExpressionPrinter" />.
